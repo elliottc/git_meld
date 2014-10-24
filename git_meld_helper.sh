@@ -4,8 +4,8 @@ DIFFALL_CMD_FILE="/tmp/diffallcommand"
 DIFFALL_DIR_LEFT="/tmp/gitdiffallleft"
 DIFFALL_DIR_RIGHT="/tmp/gitdiffallright"
 
-#save temporary left and right files to be compared later.
-#git deletes its temporary files after this script returns.
+# Save temporary left and right files to be compared later.
+# Git deletes its temporary files after this script returns.
 LEFT_FILE="$1"
 if [[ "$1" == /tmp/* ]]; then
   cp "$1" "$DIFFALL_DIR_LEFT"
@@ -18,5 +18,5 @@ if [[ "$2" == /tmp/* ]]; then
   RIGHT_FILE="$DIFFALL_DIR_RIGHT/`basename $2`"
 fi
 
-#construct the diffall command by appending this file pair
+# Construct the diffall command by appending this file pair.
 echo -n " --diff $LEFT_FILE $RIGHT_FILE" >> "$DIFFALL_CMD_FILE"

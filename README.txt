@@ -1,20 +1,16 @@
 These are some helper scripts to integrate the Meld diff tool tightly with git.  The advantages you get are:
 -Diffing many files in the same instance of meld.
--Cross-branch diffing (you don't even have to have the branch checked out!).
+-Cross-branch diffing (you don't even have to have the branch checked out).
 -Has the full power of the "git diff" command, like tracking moves and renames.
 
-
 How to set up:
-- Make sure Meld is installed.
-- Copy the git_meld folder to a local folder.
-- In .gitconfig, add this alias:
-
-[alias]
-	meld = !/home/elliottc/bin/git_meld/git_meld
-
-(Or wherever you installed to. You can also choose a different alias for the command instead of meld.)
-(Note you may have to log out and in for the changes to take effect.)
-
+- Install Meld.
+- Clone git_meld to a local directory:
+    cd <local_dir>
+    git clone <repo_path>/git_meld.git
+- Add a git alias for meld:
+    git config --global alias.meld '!<local_dir>/git_meld/git_meld.sh'
+    (Note the required preceding "!" and single quotes)
 
 Running the command:
 Run it with the exact same arguments you would use with "git diff."
