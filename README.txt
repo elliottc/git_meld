@@ -11,6 +11,7 @@ How to set up:
 - Add a git alias for meld:
     git config --global alias.meld '!<local_dir>/git_meld/git_meld.sh'
     (Note the required preceding "!" and single quotes)
+    Example: git config --global alias.meld '!~/bin/git_meld/git_meld.sh'
 
 Running the command:
 Run it with the exact same arguments you would use with "git diff."
